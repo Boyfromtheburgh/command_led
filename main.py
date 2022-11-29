@@ -7,16 +7,16 @@ from light_functions import *
 """
 
 
-func_dict = {"red": turn_red, "green": turn_green, "purple" : turn_purple, "lights off" : lights_off, "Christmas" : christ1}
+func_dict = {"red": turn_red, "green": turn_green, "purple" : turn_purple, "lights off" : lights_off, "Christmas" : christ1, "party" : party}
 # Create NeoPixel object with appropriate configuration.
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 # Intialize the library (must be called once before other functions).
 strip.begin()
-r = sr.Recognizer()
+
 while True:
 
     # obtain audio from the microphone
-    
+    r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Say something!")
         audio = r.listen(source)

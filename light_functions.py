@@ -41,6 +41,49 @@ def light_section(strip, section, color):
         strip.setPixelColor(i, color)
         strip.show()
 
+def party(strip):
+    color1 = red
+    color2 = green
+    color3 = blue
+    color4 = purple
+    color5 = white
+    j = 0
+    try:
+        while True:
+            for i in range(strip.numPixels()):
+                if i <= 20:
+                    strip.setPixelColor(i, color1)
+                elif i > 20 and i <= 40:
+                    strip.setPixelColor(i, color2)
+                elif i > 40 and i <= 60:
+                    strip.setPixelColor(i, color3)
+                elif i > 60 and i <= 80:
+                    strip.setPixelColor(i, color4)
+                elif i > 80 and i <= 100:
+                    strip.setPixelColor(i, color5)
+                elif i > 100 and i <= 120:
+                    strip.setPixelColor(i, color1)
+                else:
+                    strip.setPixelColor(i, color2)
+            strip.show()
+            time.sleep(0.5)
+            if j % 2 == 0:
+                color1 = blue
+                color2 = purple
+                color3 = white
+                color4 = red
+                color5 = green
+            else:
+                color1 = red
+                color2 = green
+                color3 = blue
+                color4 = purple
+                color5 = white
+            j += 1
+    except KeyboardInterrupt:
+        colorWipe(strip, off)
+
+
 def colorWipe(strip, color, wait_ms=0):
     """Wipe color across display a pixel at a time."""
     for i in range(strip.numPixels()):
