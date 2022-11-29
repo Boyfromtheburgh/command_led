@@ -1,5 +1,4 @@
 import speech_recognition as sr
-from threading import Thread
 
 from light_functions import *
 
