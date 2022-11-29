@@ -2,10 +2,6 @@ import speech_recognition as sr
 
 from light_functions import *
 
-"""
-    get audio from microphone and convert it to text
-"""
-
 
 func_dict = {"red": turn_red, "green": turn_green, "purple" : turn_purple, "lights off" : lights_off, "Christmas" : christ1, "party" : party}
 # Create NeoPixel object with appropriate configuration.
@@ -14,8 +10,6 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 strip.begin()
 
 while True:
-
-    # obtain audio from the microphone
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Say something!")
