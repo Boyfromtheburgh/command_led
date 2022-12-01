@@ -22,7 +22,7 @@ while True:
         print("Google Speech Recognition could not understand audio")
         continue
 
-    while command != lights_off:    
-        if command in func_dict:
-            func_dict[command](strip)
+       
+    if command in func_dict:
+        func_dict[command](strip)
 
